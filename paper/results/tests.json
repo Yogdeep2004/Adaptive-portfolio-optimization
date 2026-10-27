@@ -1,0 +1,199 @@
+{
+ "summary": {
+  "total": 21,
+  "passed": 21,
+  "failed": 0,
+  "errors": 0
+ },
+ "results": [
+  {
+   "id": "TC01",
+   "kind": "API",
+   "title": "GET /api/health",
+   "expected": "HTTP 200",
+   "observed": "HTTP 200, body keys ['status']",
+   "status": "Pass",
+   "seconds": 0.01
+  },
+  {
+   "id": "TC02",
+   "kind": "API",
+   "title": "GET /api/case-studies",
+   "expected": "three case studies",
+   "observed": "HTTP 200, ids ['dotcom', 'gfc', 'covid']",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC03",
+   "kind": "API",
+   "title": "GET /api/assets/default",
+   "expected": "default four-asset universe",
+   "observed": "HTTP 200, {'assets': ['SPY', 'QQQ', 'GLD', 'TLT']}",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC04",
+   "kind": "API",
+   "title": "GET /api/market/live",
+   "expected": "at least one live quote",
+   "observed": "HTTP 200, 6 quotes",
+   "status": "Pass",
+   "seconds": 0.92
+  },
+  {
+   "id": "TC05",
+   "kind": "API",
+   "title": "GET /api/regimes/current (SPY)",
+   "expected": "regime label, probabilities sum to 1",
+   "observed": "HTTP 200, regime bear, prob sum 1.000",
+   "status": "Pass",
+   "seconds": 0.36
+  },
+  {
+   "id": "TC06",
+   "kind": "API",
+   "title": "GET /api/regimes/history (SPY 2007-2010)",
+   "expected": "aligned arrays, states in {bull, bear, crisis}",
+   "observed": "HTTP 200, 988 days, states ['bear', 'bull', 'crisis']",
+   "status": "Pass",
+   "seconds": 0.03
+  },
+  {
+   "id": "TC07",
+   "kind": "API",
+   "title": "Compare without start and end dates",
+   "expected": "HTTP 400",
+   "observed": "HTTP 400, start and end are required",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC08",
+   "kind": "API",
+   "title": "Compare window of 6 trading days",
+   "expected": "HTTP 400 (window too short)",
+   "observed": "HTTP 400, Selected window too short for pattern comparison \u2014 need at least 20 trading days (got 7)",
+   "status": "Pass",
+   "seconds": 0.01
+  },
+  {
+   "id": "TC09",
+   "kind": "API",
+   "title": "Compare COVID-19 window, targeted at covid",
+   "expected": "matched, event covid",
+   "observed": "HTTP 200, matched=True, event=covid, confidence=0.59",
+   "status": "Pass",
+   "seconds": 24.59
+  },
+  {
+   "id": "TC10",
+   "kind": "API",
+   "title": "Compare calm 2013-2015 window, auto mode",
+   "expected": "no crisis match",
+   "observed": "HTTP 200, matched=False, event=None",
+   "status": "Pass",
+   "seconds": 0.09
+  },
+  {
+   "id": "TC11",
+   "kind": "API",
+   "title": "Compare with an invalid ticker",
+   "expected": "HTTP 400 or 502",
+   "observed": "HTTP 502, Yahoo returned no data for ZZZZNOTASYMBOL: {'code': 'Not Found', 'desc",
+   "status": "Pass",
+   "seconds": 4.81
+  },
+  {
+   "id": "TC12",
+   "kind": "API",
+   "title": "POST /api/backtest with unknown case study",
+   "expected": "HTTP 400",
+   "observed": "HTTP 400, Unknown case_study 'nonexistent'",
+   "status": "Pass",
+   "seconds": 0.02
+  },
+  {
+   "id": "TC13",
+   "kind": "API",
+   "title": "POST /api/backtest, COVID-19 case study",
+   "expected": "HTTP 200 with three strategies",
+   "observed": "HTTP 200, keys ['assets', 'case_study', 'crisis_window', 'data_notes', 'date_range', 'description', 'metrics_full_period', 'metrics_test_period']",
+   "status": "Pass",
+   "seconds": 9.05
+  },
+  {
+   "id": "TC14",
+   "kind": "Unit",
+   "title": "Backtest weights are fully invested",
+   "expected": "each rebalance row sums to 1",
+   "observed": "108 rebalance rows across 3 strategies, max |sum(w) - 1| = 1.0e-04",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC15",
+   "kind": "Unit",
+   "title": "Higher cost lowers net return",
+   "expected": "return at 0 bps above return at 50 bps",
+   "observed": "Mean-Variance final value 1.705 at 0 bps vs 1.367 at 50 bps (start 1.0)",
+   "status": "Pass",
+   "seconds": 26.47
+  },
+  {
+   "id": "TC16",
+   "kind": "Unit",
+   "title": "Resampling is length invariant",
+   "expected": "(40, 3) for any window length",
+   "observed": "output shapes for 33, 120, 600 day windows: [(40, 3), (40, 3), (40, 3)]",
+   "status": "Pass",
+   "seconds": 0.01
+  },
+  {
+   "id": "TC17",
+   "kind": "Unit",
+   "title": "Equal-weight and mean-variance weights",
+   "expected": "sum to 1, long-only",
+   "observed": "equal-weight sum 1.0000; mean-variance sum 1.0000, min weight 0.0000",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC18",
+   "kind": "Unit",
+   "title": "Adaptive policy output and parameter round trip",
+   "expected": "softmax weights, lossless flatten",
+   "observed": "softmax weights sum 1.0000, min 0.016; flatten/from_flat round trip exact",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC19",
+   "kind": "Unit",
+   "title": "HMM crisis state has highest volatility",
+   "expected": "crisis = max volatility state",
+   "observed": "mean volatility by state {'bear': 0.22, 'bull': 0.131, 'crisis': 0.543}",
+   "status": "Pass",
+   "seconds": 0.03
+  },
+  {
+   "id": "TC20",
+   "kind": "Unit",
+   "title": "Reference corpus and embedding size",
+   "expected": "965 windows, 16-d embeddings",
+   "observed": "embeddings (965, 16), labels {'normal': 679, 'dotcom': 105, 'gfc': 101, 'covid': 80}, fit method hdbscan_centroid, 3 clusters",
+   "status": "Pass",
+   "seconds": 0.0
+  },
+  {
+   "id": "TC21",
+   "kind": "Unit",
+   "title": "Matcher is deterministic",
+   "expected": "identical confidence on repeat",
+   "observed": "two identical queries gave confidence 0.5912 and 0.5912",
+   "status": "Pass",
+   "seconds": 0.07
+  }
+ ]
+}

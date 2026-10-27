@@ -1,0 +1,492 @@
+{
+ "cases": {
+  "dotcom_deployed": {
+   "label": "Dot-com (as deployed: SPY, QQQ, GC=F)",
+   "assets": [
+    "SPY",
+    "QQQ",
+    "GC=F"
+   ],
+   "date_range": {
+    "start": "2000-08-31",
+    "end": "2003-12-31"
+   },
+   "split": "2000-10-13",
+   "crisis_window": [
+    "2000-03-10",
+    "2002-10-09"
+   ],
+   "n_days": 829,
+   "n_train_days": 30,
+   "n_test_days": 799,
+   "metrics_test": {
+    "equal_weight": {
+     "total_return": -0.1037,
+     "annualized_return": -0.0339,
+     "annualized_volatility": 0.209,
+     "sharpe_ratio": -0.157,
+     "max_drawdown": -0.43,
+     "calmar_ratio": -0.079
+    },
+    "mean_variance": {
+     "total_return": 0.5259,
+     "annualized_return": 0.1426,
+     "annualized_volatility": 0.2032,
+     "sharpe_ratio": 0.658,
+     "max_drawdown": -0.1767,
+     "calmar_ratio": 0.807
+    },
+    "adaptive": {
+     "total_return": 0.5261,
+     "annualized_return": 0.1426,
+     "annualized_volatility": 0.148,
+     "sharpe_ratio": 0.84,
+     "max_drawdown": -0.1517,
+     "calmar_ratio": 0.94
+    }
+   },
+   "metrics_full": {
+    "equal_weight": {
+     "total_return": -0.1983,
+     "annualized_return": -0.065,
+     "annualized_volatility": 0.2099,
+     "sharpe_ratio": -0.283,
+     "max_drawdown": -0.4782,
+     "calmar_ratio": -0.136
+    },
+    "mean_variance": {
+     "total_return": 0.4186,
+     "annualized_return": 0.1121,
+     "annualized_volatility": 0.2032,
+     "sharpe_ratio": 0.554,
+     "max_drawdown": -0.2362,
+     "calmar_ratio": 0.475
+    },
+    "adaptive": {
+     "total_return": 0.4937,
+     "annualized_return": 0.1297,
+     "annualized_volatility": 0.1473,
+     "sharpe_ratio": 0.798,
+     "max_drawdown": -0.1517,
+     "calmar_ratio": 0.855
+    }
+   },
+   "turnover": {
+    "equal_weight": 0.0,
+    "mean_variance": 0.8975512820512819,
+    "adaptive": 0.0
+   },
+   "bootstrap": {
+    "adaptive_minus_mean_variance": {
+     "sharpe_diff": 0.1722978700926212,
+     "ci_low": -0.7720020684723553,
+     "ci_high": 1.1925563648663615,
+     "p_diff_le_0": 0.3592
+    },
+    "adaptive_minus_equal_weight": {
+     "sharpe_diff": 0.9132723455794063,
+     "ci_low": -0.4641231877150521,
+     "ci_high": 2.281957337160806,
+     "p_diff_le_0": 0.1006
+    }
+   }
+  },
+  "dotcom_corrected": {
+   "label": "Dot-com (corrected: SPY, QQQ, VUSTX)",
+   "assets": [
+    "SPY",
+    "QQQ",
+    "VUSTX"
+   ],
+   "date_range": {
+    "start": "1999-06-02",
+    "end": "2003-12-31"
+   },
+   "split": "2000-03-10",
+   "crisis_window": [
+    "2000-03-10",
+    "2002-10-09"
+   ],
+   "n_days": 1153,
+   "n_train_days": 196,
+   "n_test_days": 957,
+   "metrics_test": {
+    "equal_weight": {
+     "total_return": -0.2074,
+     "annualized_return": -0.0594,
+     "annualized_volatility": 0.2119,
+     "sharpe_ratio": -0.277,
+     "max_drawdown": -0.4648,
+     "calmar_ratio": -0.128
+    },
+    "mean_variance": {
+     "total_return": 0.4335,
+     "annualized_return": 0.0995,
+     "annualized_volatility": 0.1371,
+     "sharpe_ratio": 0.615,
+     "max_drawdown": -0.2525,
+     "calmar_ratio": 0.394
+    },
+    "adaptive": {
+     "total_return": -0.6053,
+     "annualized_return": -0.2171,
+     "annualized_volatility": 0.4158,
+     "sharpe_ratio": -0.43,
+     "max_drawdown": -0.7321,
+     "calmar_ratio": -0.297
+    }
+   },
+   "metrics_full": {
+    "equal_weight": {
+     "total_return": 0.0791,
+     "annualized_return": 0.0168,
+     "annualized_volatility": 0.2088,
+     "sharpe_ratio": 0.094,
+     "max_drawdown": -0.4648,
+     "calmar_ratio": 0.036
+    },
+    "mean_variance": {
+     "total_return": 1.5949,
+     "annualized_return": 0.2317,
+     "annualized_volatility": 0.187,
+     "sharpe_ratio": 1.108,
+     "max_drawdown": -0.2525,
+     "calmar_ratio": 0.918
+    },
+    "adaptive": {
+     "total_return": -0.2874,
+     "annualized_return": -0.0714,
+     "annualized_volatility": 0.3924,
+     "sharpe_ratio": -0.044,
+     "max_drawdown": -0.7321,
+     "calmar_ratio": -0.098
+    }
+   },
+   "turnover": {
+    "equal_weight": 0.0,
+    "mean_variance": 0.5049796296296296,
+    "adaptive": 0.5699851851851852
+   },
+   "bootstrap": {
+    "adaptive_minus_mean_variance": {
+     "sharpe_diff": -1.0392284352033456,
+     "ci_low": -2.2743044225100517,
+     "ci_high": 0.1647032269859701,
+     "p_diff_le_0": 0.9544
+    },
+    "adaptive_minus_equal_weight": {
+     "sharpe_diff": -0.14947516947547518,
+     "ci_low": -0.5305306673592651,
+     "ci_high": 0.21510272268277622,
+     "p_diff_le_0": 0.793
+    }
+   }
+  },
+  "gfc": {
+   "label": "2008 GFC",
+   "assets": [
+    "SPY",
+    "QQQ",
+    "GLD",
+    "TLT"
+   ],
+   "date_range": {
+    "start": "2006-01-04",
+    "end": "2010-12-31"
+   },
+   "split": "2007-10-09",
+   "crisis_window": [
+    "2007-10-09",
+    "2009-03-09"
+   ],
+   "n_days": 1258,
+   "n_train_days": 443,
+   "n_test_days": 815,
+   "metrics_test": {
+    "equal_weight": {
+     "total_return": 0.2885,
+     "annualized_return": 0.0815,
+     "annualized_volatility": 0.1472,
+     "sharpe_ratio": 0.47,
+     "max_drawdown": -0.2658,
+     "calmar_ratio": 0.307
+    },
+    "mean_variance": {
+     "total_return": 0.4376,
+     "annualized_return": 0.1188,
+     "annualized_volatility": 0.1596,
+     "sharpe_ratio": 0.658,
+     "max_drawdown": -0.1905,
+     "calmar_ratio": 0.623
+    },
+    "adaptive": {
+     "total_return": 0.2016,
+     "annualized_return": 0.0584,
+     "annualized_volatility": 0.1308,
+     "sharpe_ratio": 0.346,
+     "max_drawdown": -0.2383,
+     "calmar_ratio": 0.245
+    }
+   },
+   "metrics_full": {
+    "equal_weight": {
+     "total_return": 0.6092,
+     "annualized_return": 0.1,
+     "annualized_volatility": 0.1307,
+     "sharpe_ratio": 0.65,
+     "max_drawdown": -0.2658,
+     "calmar_ratio": 0.376
+    },
+    "mean_variance": {
+     "total_return": 0.6589,
+     "annualized_return": 0.1067,
+     "annualized_volatility": 0.1567,
+     "sharpe_ratio": 0.605,
+     "max_drawdown": -0.1905,
+     "calmar_ratio": 0.56
+    },
+    "adaptive": {
+     "total_return": 0.4689,
+     "annualized_return": 0.0801,
+     "annualized_volatility": 0.1142,
+     "sharpe_ratio": 0.561,
+     "max_drawdown": -0.2383,
+     "calmar_ratio": 0.336
+    }
+   },
+   "turnover": {
+    "equal_weight": 0.0,
+    "mean_variance": 0.7457254237288136,
+    "adaptive": 0.26771186440677963
+   },
+   "bootstrap": {
+    "adaptive_minus_mean_variance": {
+     "sharpe_diff": -0.3138006591118834,
+     "ci_low": -1.4482727451743709,
+     "ci_high": 0.7241871084074203,
+     "p_diff_le_0": 0.7174
+    },
+    "adaptive_minus_equal_weight": {
+     "sharpe_diff": -0.13210983770000484,
+     "ci_low": -1.472917426357454,
+     "ci_high": 1.1548256615242074,
+     "p_diff_le_0": 0.5952
+    }
+   }
+  },
+  "covid": {
+   "label": "COVID-19",
+   "assets": [
+    "SPY",
+    "QQQ",
+    "GLD",
+    "TLT"
+   ],
+   "date_range": {
+    "start": "2019-01-03",
+    "end": "2021-12-31"
+   },
+   "split": "2020-02-19",
+   "crisis_window": [
+    "2020-02-19",
+    "2020-04-07"
+   ],
+   "n_days": 756,
+   "n_train_days": 283,
+   "n_test_days": 473,
+   "metrics_test": {
+    "equal_weight": {
+     "total_return": 0.3463,
+     "annualized_return": 0.1717,
+     "annualized_volatility": 0.1441,
+     "sharpe_ratio": 1.033,
+     "max_drawdown": -0.1545,
+     "calmar_ratio": 1.111
+    },
+    "mean_variance": {
+     "total_return": 0.4013,
+     "annualized_return": 0.1969,
+     "annualized_volatility": 0.1491,
+     "sharpe_ratio": 1.146,
+     "max_drawdown": -0.1244,
+     "calmar_ratio": 1.583
+    },
+    "adaptive": {
+     "total_return": 0.3385,
+     "annualized_return": 0.168,
+     "annualized_volatility": 0.1388,
+     "sharpe_ratio": 1.045,
+     "max_drawdown": -0.131,
+     "calmar_ratio": 1.283
+    }
+   },
+   "metrics_full": {
+    "equal_weight": {
+     "total_return": 0.8369,
+     "annualized_return": 0.2247,
+     "annualized_volatility": 0.1214,
+     "sharpe_ratio": 1.542,
+     "max_drawdown": -0.1545,
+     "calmar_ratio": 1.455
+    },
+    "mean_variance": {
+     "total_return": 0.8071,
+     "annualized_return": 0.218,
+     "annualized_volatility": 0.1278,
+     "sharpe_ratio": 1.427,
+     "max_drawdown": -0.1244,
+     "calmar_ratio": 1.753
+    },
+    "adaptive": {
+     "total_return": 0.9394,
+     "annualized_return": 0.2471,
+     "annualized_volatility": 0.1195,
+     "sharpe_ratio": 1.707,
+     "max_drawdown": -0.131,
+     "calmar_ratio": 1.886
+    }
+   },
+   "turnover": {
+    "equal_weight": 0.0,
+    "mean_variance": 0.7212,
+    "adaptive": 0.7204628571428572
+   },
+   "bootstrap": {
+    "adaptive_minus_mean_variance": {
+     "sharpe_diff": -0.10331247046617853,
+     "ci_low": -0.9416687741309369,
+     "ci_high": 0.7651001600067722,
+     "p_diff_le_0": 0.5914
+    },
+    "adaptive_minus_equal_weight": {
+     "sharpe_diff": 0.01686386020042363,
+     "ci_low": -0.8350595465411226,
+     "ci_high": 0.788151556405163,
+     "p_diff_le_0": 0.5144
+    }
+   }
+  }
+ },
+ "dataset": {
+  "dotcom_deployed": {
+   "SPY": {
+    "n": 830,
+    "start": "2000-08-30",
+    "end": "2003-12-31",
+    "ann_return": -0.07328868890821205,
+    "ann_vol": 0.2231391831647009,
+    "max_drawdown": -0.4727435875522462
+   },
+   "QQQ": {
+    "n": 830,
+    "start": "2000-08-30",
+    "end": "2003-12-31",
+    "ann_return": -0.26123818385135134,
+    "ann_vol": 0.44459531954151144,
+    "max_drawdown": -0.8045311369804579
+   },
+   "GC=F": {
+    "n": 830,
+    "start": "2000-08-30",
+    "end": "2003-12-31",
+    "ann_return": 0.13504035034760165,
+    "ann_vol": 0.14738904639979233,
+    "max_drawdown": -0.15171503957783639
+   }
+  },
+  "dotcom_corrected": {
+   "SPY": {
+    "n": 1154,
+    "start": "1999-06-01",
+    "end": "2003-12-31",
+    "ann_return": -0.01950595442278369,
+    "ann_vol": 0.21853721165601103,
+    "max_drawdown": -0.4751587330028596
+   },
+   "QQQ": {
+    "n": 1154,
+    "start": "1999-06-01",
+    "end": "2003-12-31",
+    "ann_return": -0.0700889750433642,
+    "ann_vol": 0.44771322317312834,
+    "max_drawdown": -0.8296390929673658
+   },
+   "VUSTX": {
+    "n": 1154,
+    "start": "1999-06-01",
+    "end": "2003-12-31",
+    "ann_return": 0.08706018763512424,
+    "ann_vol": 0.09491340362454219,
+    "max_drawdown": -0.12839710871914534
+   }
+  },
+  "gfc": {
+   "SPY": {
+    "n": 1259,
+    "start": "2006-01-03",
+    "end": "2010-12-31",
+    "ann_return": 0.019236574497078385,
+    "ann_vol": 0.24885563132533647,
+    "max_drawdown": -0.5518944655165967
+   },
+   "QQQ": {
+    "n": 1259,
+    "start": "2006-01-03",
+    "end": "2010-12-31",
+    "ann_return": 0.062071149564234984,
+    "ann_vol": 0.25330418292119783,
+    "max_drawdown": -0.5340402163364222
+   },
+   "GLD": {
+    "n": 1259,
+    "start": "2006-01-03",
+    "end": "2010-12-31",
+    "ann_return": 0.21183203625520242,
+    "ann_vol": 0.2306268274385006,
+    "max_drawdown": -0.2941413603663834
+   },
+   "TLT": {
+    "n": 1259,
+    "start": "2006-01-03",
+    "end": "2010-12-31",
+    "ann_return": 0.04901332516211232,
+    "ann_vol": 0.14494600295446988,
+    "max_drawdown": -0.2658543508770549
+   }
+  },
+  "covid": {
+   "SPY": {
+    "n": 757,
+    "start": "2019-01-02",
+    "end": "2021-12-31",
+    "ann_return": 0.2588682226221153,
+    "ann_vol": 0.21919061720858576,
+    "max_drawdown": -0.3371727693638181
+   },
+   "QQQ": {
+    "n": 757,
+    "start": "2019-01-02",
+    "end": "2021-12-31",
+    "ann_return": 0.3775151319383978,
+    "ann_vol": 0.2493020513383029,
+    "max_drawdown": -0.28559350728367017
+   },
+   "GLD": {
+    "n": 757,
+    "start": "2019-01-02",
+    "end": "2021-12-31",
+    "ann_return": 0.12092493440619267,
+    "ann_vol": 0.15314546936197593,
+    "max_drawdown": -0.1877352829494502
+   },
+   "TLT": {
+    "n": 757,
+    "start": "2019-01-02",
+    "end": "2021-12-31",
+    "ann_return": 0.08553157117578403,
+    "ann_vol": 0.1633105899949449,
+    "max_drawdown": -0.21344118413409896
+   }
+  }
+ }
+}

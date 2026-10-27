@@ -1,0 +1,13 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+yfinance==0.2.51
+pandas==2.2.3
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.5.2
+hmmlearn==0.3.3
+pydantic==2.10.4
+# Plain PyPI install resolves a CPU/MPS wheel on macOS with no extra index.
+# On Linux/CI, prefer: pip install torch --extra-index-url https://download.pytorch.org/whl/cpu
+# to avoid pulling a multi-GB CUDA build.
+torch==2.5.1
